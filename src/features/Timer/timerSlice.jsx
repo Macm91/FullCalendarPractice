@@ -7,7 +7,7 @@ const initialState = {
     seconds: 60,
 };
 
-export const createSlice = createSlice({
+export const timerSlice = createSlice({
     name: "timer",
     initialState,
     reducers: {
@@ -19,3 +19,7 @@ export const createSlice = createSlice({
         // }
     }
 })
+
+export const {decrement} = timerSlice.actions;
+
+export default timerSlice.reducer;
