@@ -5,18 +5,18 @@ import { decrement } from "./timerSlice";
 
 export function Timer(){
     const dispatch = useDispatch();
-    const state = useSelector((state) => state);
+    const count = useSelector((state) => state.seconds);
 
-    function handleClick(){
+    function handleDecrement(){
         dispatch(decrement());
     }
-}
+
 
 return(
     <div>
-        <h1>{secondValue}</h1>
-        <button onClick={handleClick()}>
-            Start
+        <h1>{count}</h1>
+        <button classname="startButton" aria-label="Start Timer" onClick={handleDecrement()}>
         </button>
     </div>
 )
+}
