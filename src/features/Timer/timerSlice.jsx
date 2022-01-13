@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   value: 60
+   value: 1
 };
 
 export const timerSlice = createSlice({
@@ -9,12 +9,12 @@ export const timerSlice = createSlice({
     initialState,
     reducers: {
         decrement(state) {
-            if (state !== 0){
-                state.value --;
+            if (state.value !== 0){
+                state.value -= 1;
             }
         },
         increment(state){
-            state.value ++;
+            state.value += 1;
         }
     }
 })

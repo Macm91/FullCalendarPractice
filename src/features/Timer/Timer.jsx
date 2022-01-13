@@ -13,7 +13,7 @@ export function Timer(){
     }
 
     function handleIncrement(){
-        dispatch(decrement());
+        dispatch(increment());
     }
 
 return(
