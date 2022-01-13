@@ -1,7 +1,7 @@
 import { store } from "../../app/store";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "./timerSlice";
+import { increment, decrement, reset } from "./timerSlice";
 import "./Timer.css"
 
 export function Timer(){
@@ -16,6 +16,10 @@ export function Timer(){
         dispatch(increment());
     }
 
+    function handleReset(){
+        dispatch(reset());
+    }
+
 return(
     <div>
        <h1>{count}</h1>
@@ -26,6 +30,12 @@ return(
         <button onClick={()=> handleIncrement()}>
            Increase
         </button>
+
+        <span>
+            <button onClick={() => handleReset()}>
+                Reset
+            </button>
+        </span>
 
     </div>
 )
