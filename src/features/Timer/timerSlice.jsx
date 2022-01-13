@@ -3,8 +3,8 @@ import { act } from "react-dom/test-utils";
 
 const initialState = {
    value: 1,
-   status: 'paused',
-   decrement_interval: 0
+//    status: 'paused',
+//    decrement_interval: 0
 };
 
 export const timerSlice = createSlice({
@@ -25,6 +25,8 @@ export const timerSlice = createSlice({
             }
         },
         inputSeconds(state, action){
+            debugger
+            console.log(action.payload)
             state.value = action.payload;
         }
     }

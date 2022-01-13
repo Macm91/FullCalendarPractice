@@ -10,6 +10,8 @@ export function Timer(){
     const count = useSelector((state) => state.timer.value)
     const [seconds, setSeconds] = useState (0)
 
+    const changeSeconds = Number(seconds);
+
     function handleDecrement(){
         dispatch(decrement());
     }
@@ -23,7 +25,7 @@ export function Timer(){
     }
 
     function secondsSet(){
-        dispatch(inputSeconds(seconds))
+        dispatch(inputSeconds(changeSeconds))
     }
 
 return(
@@ -45,8 +47,8 @@ return(
         
         <h1> Or input time in seconds below</h1>
 
-        {/* <form onSubmit={(event) => secondsSet(event)}> */}
-        <form onSubmit={(event) => secondsSet(event)}>
+        
+        <form onSubmit={(e) => secondsSet()}>
         <input type="number" value={seconds} onChange={(e) => setSeconds(e.target.value)}/>
         <input type="submit" value="Submit"></input>
         </form>
