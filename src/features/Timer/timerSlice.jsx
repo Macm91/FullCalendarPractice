@@ -1,25 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    // days: 0,
-    // hours: 0,
-    // minutes: 0,
-    seconds: 60,
+   value: 60
 };
 
 export const timerSlice = createSlice({
-    name: "timer",
+    name: "Timer",
     initialState,
     reducers: {
-        decrement(state){
-            state.vallue--;
+        decrement(state) {
+            if (state !== 0){
+                state.value --;
+            }
         },
-        // addTime(state, action){
-            
-        // }
+        increment(state){
+            state.value ++;
+        }
     }
 })
 
-export const {decrement} = timerSlice.actions;
+export const {decrement, increment} = timerSlice.actions;
 
 export default timerSlice.reducer;

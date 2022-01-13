@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route
-// } from "react-router-dom";
 import { Routes ,Route, BrowserRouter } from 'react-router-dom';
-import Timer from "./features/Timer/Timer";
+import { Timer } from './features/Timer/Timer';
+import {useSelector, useDispatch} from "react-redux"
+
+
 
 
 function App() {
@@ -15,9 +13,11 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <h1>Hello World</h1>
+          <Timer/>
         </header>
+        
       </div>
+      
       <Routes>
             <Route path="/timer" component= {Timer}/>
       </Routes>
