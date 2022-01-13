@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 const initialState = {
    value: 1,
@@ -22,12 +23,13 @@ export const timerSlice = createSlice({
             if (state.value !== 0){
                 state.value = 0
             }
-            //currently immediately resets to zero. I want it to show the 
-            //numbers as it decreases
         },
+        inputSeconds(state, action){
+            state.value = action.payload;
+        }
     }
 })
 
-export const {decrement, increment, reset} = timerSlice.actions;
+export const {decrement, increment, reset, inputSeconds} = timerSlice.actions;
 
 export default timerSlice.reducer;
