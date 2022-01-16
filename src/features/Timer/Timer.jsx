@@ -1,4 +1,4 @@
-import { store } from "../../app/store";
+// import { store } from "../../app/store";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, reset, inputSeconds } from "./timerSlice";
@@ -8,9 +8,8 @@ import { useState } from "react";
 export function Timer(){
     const dispatch = useDispatch();
     const count = useSelector((state) => state.timer.value)
-    const [seconds, setSeconds] = useState (0)
+    const [seconds, setSeconds] = useState ()
 
-    const changeSeconds = Number(seconds);
 
     function handleDecrement(){
         dispatch(decrement());
@@ -24,8 +23,9 @@ export function Timer(){
         dispatch(reset());
     }
 
-    function secondsSet(){
-        dispatch(inputSeconds(changeSeconds))
+    function secondsSet(e){
+        e.preventDefault();
+        dispatch(inputSeconds(Number(seconds)))
     }
 
 return(
@@ -48,9 +48,9 @@ return(
         <h1> Or input time in seconds below</h1>
 
         
-        <form onSubmit={(e) => secondsSet()}>
-        <input type="number" value={seconds} onChange={(e) => setSeconds(e.target.value)}/>
-        <input type="submit" value="Submit"></input>
+        <form onSubmit={(e) => secondsSet(e)}>
+        <input type="number" value={seconds} onChange={(e) => setSeconds(e.target.value)} />
+        <input type="submit"/>
         </form>
     </div>
 )

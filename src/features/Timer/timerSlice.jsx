@@ -26,7 +26,6 @@ export const timerSlice = createSlice({
         },
         inputSeconds(state, action){
             debugger
-            console.log(action.payload)
             state.value = action.payload;
         }
     }
