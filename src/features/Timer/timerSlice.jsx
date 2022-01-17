@@ -2,9 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { act } from "react-dom/test-utils";
 
 const initialState = {
-   value: 1,
-//    status: 'paused',
-//    decrement_interval: 0
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
 };
 
 export const timerSlice = createSlice({
@@ -12,21 +13,23 @@ export const timerSlice = createSlice({
     initialState,
     reducers: {
         decrement(state) {
-            if (state.value !== 0){
-                state.value -= 1;
+            if (state.seconds !== 0){
+                state.seconds -= 1;
             }
         },
         increment(state){
-            state.value += 1;
+            state.seconds += 1;
         },
         reset(state) {
             if (state.value !== 0){
-                state.value = 0
+                state.seconds = 0;
+                state.minutes =0;
+                state.hours =0;
+                state.days = 0;
             }
         },
         inputSeconds(state, action){
-            debugger
-            state.value = action.payload;
+            state.seconds = action.payload;
         }
     }
 })

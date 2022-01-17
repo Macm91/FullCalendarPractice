@@ -7,7 +7,10 @@ import { useState } from "react";
 
 export function Timer(){
     const dispatch = useDispatch();
-    const count = useSelector((state) => state.timer.value)
+    const secondCount = useSelector((state) => state.timer.seconds)
+    const minuteCount = useSelector((state) => state.timer.minutes)
+    const hourCount = useSelector((state) => state.timer.hours)
+    const dayCount = useSelector((state) => state.timer.days)
     const [seconds, setSeconds] = useState ()
 
 
@@ -30,7 +33,26 @@ export function Timer(){
 
 return(
     <div>
-       <h1>{count}</h1>
+        <section>
+            <p>{dayCount}</p>
+            <p><small>Days</small></p>
+        </section>
+        <section>
+            <p>{hourCount}</p>
+            <p><small>Hours</small></p>
+        </section>
+        <section>
+            <p>{minuteCount}</p>
+            <p><small>Minutes</small></p>
+        </section>
+        <section>
+            <p>{secondCount}</p>
+            <p><small>Seconds</small></p>
+        </section>
+        
+
+
+
        <button onClick={()=> handleDecrement()}>
            Decrease 
         </button>
