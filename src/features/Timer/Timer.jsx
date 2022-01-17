@@ -33,22 +33,28 @@ export function Timer(){
 
 return(
     <div>
+    
+        <div  className="TimerCountdown">
         <section>
             <p>{dayCount}</p>
             <p><small>Days</small></p>
         </section>
+        <span> : </span>
         <section>
             <p>{hourCount}</p>
             <p><small>Hours</small></p>
         </section>
+        <span> : </span>
         <section>
             <p>{minuteCount}</p>
             <p><small>Minutes</small></p>
         </section>
+        <span> : </span>
         <section>
             <p>{secondCount}</p>
             <p><small>Seconds</small></p>
         </section>
+        </div>
         
 
 
