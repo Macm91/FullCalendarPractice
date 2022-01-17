@@ -1,13 +1,46 @@
-.TimerCountdown{
-    /* display: flex;
-    flex: column;
-    align-items: center;
-    justify-content: center; */
-    /* color: #f8f8f8 */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    font-size: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(./background.jpeg);
+    background-position:bottom;
+    background-size:cover;
+    background-repeat: no-repeat;
+    color: rgb(36, 35, 35);
+    width: 100vw;
+    height: 100 vh;
+}
+
+
+.TimerCountdown{
+    display: flex;
+    flex: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2em;
+    margin-bottom: 1em;
+    padding-top: 2em;
+    width: 100%;
+    height: 100%;
+    border: 1px rgb(32, 32, 32) solid;
+}
+
+.TimerCountdown{
+    color:rgb(26, 25, 25)
+}
+
+.TimerCountdown div:first-child{
+    text-align: center;
+}
+
+
 .TimerCountdown div:last-child {
-    border: 1px solid white;
+    border: 3px solid rgb(36, 35, 35);
     border-radius: 3px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -18,4 +51,42 @@
 
 section p:first-child, .timer div:last-child span{
     font-size: 3em
+}
+
+@media screen and (max-width: 480px){
+    .TimerCountdown div:last-child{
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+.decrease{
+    float: left;
+    width: 3em;
+    height: 3em;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.increaseTime{
+    float: right;
+    width: 3em;
+    height: 3em;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.reset{
+    background-color: transparent;
+    border: solid 3px rgb(0, 0, 0);
+    border-radius: 6px;   
+    font-size: 80%;
+}
+
+input{
+    background-color: rgba(248, 248, 248, 0.432);
+}
+
+h3{
+    margin-top: 90%;
 }

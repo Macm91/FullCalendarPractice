@@ -32,8 +32,8 @@ export function Timer(){
     }
 
 return(
-    <div>
-    
+    <div className="timerPage">
+        <div className="timerContainer">
         <div  className="TimerCountdown">
         <section>
             <p>{dayCount}</p>
@@ -55,31 +55,35 @@ return(
             <p><small>Seconds</small></p>
         </section>
         </div>
-        
+        </div>
+       
 
 
-
-       <button onClick={()=> handleDecrement()}>
-           Decrease 
-        </button>
-
-        <button onClick={()=> handleIncrement()}>
-           Increase
-        </button>
-
+      <div className="buttons">
         <span>
-            <button onClick={() => handleReset()}>
+            <button className="decrease" onClick={()=> handleDecrement()}>
+                <svg  xmlns="http://www.w3.org/2000/svg" className="decrease" viewBox="0 0 16 16">
+                <path d="M5.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+                <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                </svg> 
+            </button>
+            <button className="increaseTime" onClick={()=> handleIncrement()}>
+                <svg xmlns="http://www.w3.org/2000/svg"  className="increaseTime"  viewBox="0 0 16 16">
+                <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z"/>
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+                </svg>
+            </button>
+            <button className="reset" onClick={() => handleReset()}>
                 Reset
             </button>
         </span>
-        
-        <h1> Or input time in seconds below</h1>
 
-        
+        <h3> Or input time in seconds below</h3>        
         <form onSubmit={(e) => secondsSet(e)}>
         <input type="number" value={seconds} onChange={(e) => setSeconds(e.target.value)} />
         <input type="submit"/>
         </form>
+      </div>
     </div>
 )
 }
