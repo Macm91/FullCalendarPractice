@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Routes ,Route, BrowserRouter } from 'react-router-dom';
 import { Timer } from './features/Timer/Timer';
-import {useSelector, useDispatch} from "react-redux"
+
 
 
 
