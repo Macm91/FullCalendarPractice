@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, reset, inputSeconds } from "./timerSlice";
 import "./Timer.css"
 import { useState } from "react";
+import SimplePicker from 'simplepicker';
 
 export function Timer(){
     const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export function Timer(){
     const hourCount = useSelector((state) => state.timer.hours)
     const dayCount = useSelector((state) => state.timer.days)
     const [seconds, setSeconds] = useState ()
+    const SimplePicker = require('simplepicker')
 
 
     function handleDecrement(){
@@ -83,6 +85,9 @@ return(
         <input type="number" value={seconds} onChange={(e) => setSeconds(e.target.value)} />
         <input type="submit"/>
         </form>
+       
+
+
       </div>
     </div>
 )
