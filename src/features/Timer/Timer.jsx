@@ -1,11 +1,10 @@
-// import { store } from "../../app/store";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, reset, inputSeconds } from "./timerSlice";
 import "./Timer.css"
 import { useState } from "react";
 import SimplePicker from 'simplepicker';
-import { useFetchExercisesQuery } from "../Exercises/exercisesApiSlice";
+
 
 export function Timer(){
     const dispatch = useDispatch();
@@ -16,9 +15,7 @@ export function Timer(){
     const [seconds, setSeconds] = useState ()
     const SimplePicker = require('simplepicker')
 
-    const { data = []} = useFetchExercisesQuery();
-
-
+    
     function handleDecrement(){
         dispatch(decrement());
     }
@@ -92,29 +89,6 @@ return(
 
 
       </div>
-<div>
-<p>Exercises List:</p>
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Body Part</th>
-            <th> Equipment</th>
-        </tr>
-    </thead>
-    <tbody>
-        {data.map((exercise) => (
-            <tr key={exercise.id}>
-                <td>{exercise.name}</td>
-                <td>{exercise.body_part}</td>
-                <td>{exercise.equipment}</td>
-            </tr>
-        ))}
-    </tbody>
-</table>
-</div>
-
     </div>
 )
 }
